@@ -94,14 +94,13 @@ const TestimonialsColumn = (
           ease: "linear",
           repeatType: "loop"
         }}
-
       >
         {
           [...new Array(2).fill(0)].map((_: any, index: any) => (
             <React.Fragment key={index}>
               {
-                props.testimonials.map(({ text, imageSrc, name, username }) => (
-                  <div className="card">
+                props.testimonials.map(({ text, imageSrc, name, username }, i: any) => (
+                  <div key={i} className="card">
                     <div>{text}</div>
                     <div className="flex items-center gap-2 mt-5">
                       <Image src={imageSrc} alt={name} width={40} height={40} className="h-10 w-10 rounded-full" />
